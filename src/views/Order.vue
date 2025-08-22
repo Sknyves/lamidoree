@@ -184,7 +184,7 @@ const placeOrder = () => {
                   >
                 </div>
                 
-                <div>
+                <div class="grid md:grid-cols-2 gap-4">
                   <div>
                     <label class="block text-gray-700 mb-1">Téléphone *</label>
                     <input 
