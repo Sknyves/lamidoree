@@ -68,7 +68,7 @@ const total = computed(() => {
                   >
                     <Minus class="h-3 w-3" />
                   </button>
-                  <span class="mx-2 text-sm w-5 text-center">{{ item.quantity }}</span>
+                  <span class="mx-2 text-gray-300 text-sm w-5 text-center">{{ item.quantity }}</span>
                   <button 
                     @click="$emit('update-quantity', item.id, 'increase')"
                     class="text-gray-500 hover:text-[#592d0c] p-1"
@@ -102,7 +102,7 @@ const total = computed(() => {
             </div>
 
             <RouterLink 
-              to="/checkout"
+              to="/order"
               @click="$emit('close')"
               class="block w-full mt-4 bg-[#592d0c] hover:bg-[#7a3f18] text-white py-2 rounded-lg transition-colors text-center"
             >

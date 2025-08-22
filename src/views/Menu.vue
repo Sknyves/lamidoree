@@ -145,7 +145,7 @@ const categories = [
         class="absolute inset-0 w-full h-full object-cover brightness-75"
       />
       <div class="relative z-10 text-center px-4 text-white">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Notre Menu</h1>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Menu</h1>
         <p class="text-xl md:text-2xl max-w-2xl mx-auto">Découvrez nos délices préparés avec passion</p>
       </div>
     </section>

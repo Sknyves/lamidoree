@@ -34,42 +34,42 @@ const removeItem = (id) => {
       <div class="flex items-center justify-between">
         <!-- Logo -->
         <RouterLink to="/" class="flex items-center">
-          <img src="/logo.png" alt="Logo" class="h-10 md:h-12">
+          <img src="/logo.png" alt="Logo" class="h-15 md:h-15">
         </RouterLink>
 
         <!-- Navigation desktop -->
         <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
           <RouterLink 
             to="/" 
-            class="hover:text-[#FAB421] transition-colors duration-200 font-medium"
+            class="hover:text-[#FAB421] transition-colors duration-200 font-bold text-xl"
             active-class="text-[#FAB421]"
           >
             Accueil
           </RouterLink>
           <RouterLink 
             to="/about" 
-            class="hover:text-[#FAB421] transition-colors duration-200 font-medium"
+            class="hover:text-[#FAB421] transition-colors duration-200 font-bold text-xl"
             active-class="text-[#FAB421]"
           >
             À propos
           </RouterLink>
           <RouterLink 
             to="/menu" 
-            class="hover:text-[#FAB421] transition-colors duration-200 font-medium"
+            class="hover:text-[#FAB421] transition-colors duration-200 font-bold text-xl"
             active-class="text-[#FAB421]"
           >
             Menu
           </RouterLink>
           <RouterLink 
             to="/gallery" 
-            class="hover:text-[#FAB421] transition-colors duration-200 font-medium"
+            class="hover:text-[#FAB421] transition-colors duration-200 font-bold text-xl"
             active-class="text-[#FAB421]"
           >
             Galerie
           </RouterLink>
           <RouterLink 
             to="/contact" 
-            class="hover:text-[#FAB421] transition-colors duration-200 font-medium"
+            class="hover:text-[#FAB421] transition-colors duration-200 font-bold text-xl"
             active-class="text-[#FAB421]"
           >
             Contact
@@ -105,7 +105,7 @@ const removeItem = (id) => {
 
           <RouterLink 
             to="/order" 
-            class="hidden md:block bg-[#592d0c] hover:bg-[#7a3f18] px-4 py-2 rounded-lg transition-colors duration-200 font-medium"
+            class="hidden md:block bg-[#592d0c] hover:bg-[#7a3f18] px-4 py-2 rounded-lg transition-colors duration-200 font-bold text-xl"
           >
             Commander
           </RouterLink>

@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter } from 'lucide
 
 const quickLinks = [
   { name: "Accueil", path: "/" },
-  { name: "Notre Menu", path: "/menu" },
+  { name: "Menu", path: "/menu" },
   { name: "Galerie", path: "/gallery" },
   { name: "À Propos", path: "/about" },
   { name: "Contact", path: "/contact" }
@@ -75,7 +75,7 @@ const openingHours = [
           <ul class="space-y-3">
             <li class="flex items-start">
               <MapPin class="text-[#FAB421] w-4 h-4 mt-1 mr-2 flex-shrink-0" />
-              <span class="text-gray-300">123 Rue du Café, 75000 Paris</span>
+              <span class="text-gray-300">123 Rue du Café, 75000 Cotonou</span>
             </li>
             <li class="flex items-start">
               <Phone class="text-[#FAB421] w-4 h-4 mt-1 mr-2 flex-shrink-0" />

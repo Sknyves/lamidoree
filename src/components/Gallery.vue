@@ -98,7 +98,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="relative w-full max-w-6xl mx-auto overflow-hidden rounded-xl shadow-lg py-8 md:py-12 space-y-6 md:space-y-8">
-    <h2 class="font-bold text-3xl md:text-4xl text-center text-[#592d0c]">Notre Galerie Gourmande</h2>
+    <h2 class="font-bold text-3xl md:text-4xl text-center text-[#592d0c]">Galerie</h2>
     
     <!-- Conteneur du carrousel -->
     <div 
@@ -147,7 +147,7 @@ onBeforeUnmount(() => {
         </div>
       </div>
       
-      <!-- Bouton précédent -->
+      <!-- Bouton précédent
       <button 
         @click="prevSlide"
         class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 md:p-3 z-20 transition-all"
@@ -156,9 +156,9 @@ onBeforeUnmount(() => {
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
-      </button>
+      </button> -->
       
-      <!-- Bouton suivant -->
+      <!-- Bouton suivant
       <button 
         @click="nextSlide"
         class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 md:p-3 z-20 transition-all"
@@ -167,7 +167,7 @@ onBeforeUnmount(() => {
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
-      </button>
+      </button> -->
     </div>
     
     <!-- Indicateurs de navigation -->
