@@ -1,32 +1,32 @@
 <script setup></script>
 
 <template>
-    <div class="bg-[#1f0f03] space-y-8 py-20">
-        <h2 class="text-center text-white text-4xl font-bold">Menu du jour</h2>
-        <div class="flex justify-center space-x-8">
-            <div class="relative">
-                <div class="h-[100px] w-[100px] rounded-full absolute -top-10 -left-10 pattern"></div>
+    <div class="bg-[#1f0f03] space-y-8 py-10 sm:py-16 md:py-20">
+        <h2 class="text-center text-white text-3xl sm:text-4xl font-bold">Menu du jour</h2>
+        <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-8">
+            <div class="relative mb-8 md:mb-0">
+                <div class="h-[60px] w-[60px] sm:h-[80px] sm:w-[80px] md:h-[100px] md:w-[100px] rounded-full absolute -top-8 -left-8 sm:-top-10 sm:-left-10 pattern"></div>
                 <div class="card relative">
-                    <div class="space-y-4 p-8 bg-white relative overflow-hidden">
-                        <div class="h-7 w-7 bg-black absolute rounded-full -top-3 -left-3"></div>
-                        <div class="h-10 w-10 bg-black absolute rounded-full -top-8 -right-5"></div>
-                        <div class="h-7 w-7 bg-black absolute rounded-full -bottom-3 -left-3"></div>
-                        <div class="h-7 w-7 bg-black absolute rounded-full -bottom-3 -right-3"></div>
-                        <div class="flex justify-between">
+                    <div class="space-y-4 p-4 sm:p-6 md:p-8 bg-white relative overflow-hidden">
+                        <div class="h-5 w-5 sm:h-7 sm:w-7 bg-black absolute rounded-full -top-2 -left-2 sm:-top-3 sm:-left-3"></div>
+                        <div class="h-7 w-7 sm:h-10 sm:w-10 bg-black absolute rounded-full -top-6 -right-3 sm:-top-8 sm:-right-5"></div>
+                        <div class="h-5 w-5 sm:h-7 sm:w-7 bg-black absolute rounded-full -bottom-2 -left-2 sm:-bottom-3 sm:-left-3"></div>
+                        <div class="h-5 w-5 sm:h-7 sm:w-7 bg-black absolute rounded-full -bottom-2 -right-2 sm:-bottom-3 sm:-right-3"></div>
+                        <div class="flex flex-col xs:flex-row xs:justify-between gap-1 xs:gap-0">
                             <h3 class="">American Combo Menu</h3>
                             <p class="text-[#c49c5e]">2000 F</p>
                         </div>
                         <div class="w-full bg-black h-[1px]"></div>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
 
-                        <div class="flex justify-between">
+                        <div class="flex flex-col xs:flex-row xs:justify-between gap-1 xs:gap-0">
                             <h3 class="">Strawberry Jam French Toast</h3>
                             <p class="text-[#c49c5e]">2000 F</p>
                         </div>
                         <div class="w-full bg-black h-[1px]"></div>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
 
-                        <div class="flex justify-between">
+                        <div class="flex flex-col xs:flex-row xs:justify-between gap-1 xs:gap-0">
                             <h3 class="">Optic Big Breakfast Combo Menu</h3>
                             <p class="text-[#c49c5e]">2000 F</p>
                         </div>
@@ -37,26 +37,26 @@
             </div>
 
             <div class="card relative">
-                <div class="space-y-4 p-8 bg-white relative overflow-hidden">
-                    <div class="h-10 w-10 bg-black absolute rounded-full -top-4 -left-5"></div>
-                    <div class="h-7 w-7 bg-black absolute rounded-full -top-6 -right-3"></div>
-                    <div class="h-7 w-7 bg-black absolute rounded-full -bottom-3 -left-3"></div>
-                    <div class="h-7 w-7 bg-black absolute rounded-full -bottom-3 -right-3"></div>
-                    <div class="flex justify-between">
+                <div class="space-y-4 p-4 sm:p-6 md:p-8 bg-white relative overflow-hidden">
+                    <div class="h-7 w-7 sm:h-10 sm:w-10 bg-black absolute rounded-full -top-2 -left-3 sm:-top-4 sm:-left-5"></div>
+                    <div class="h-5 w-5 sm:h-7 sm:w-7 bg-black absolute rounded-full -top-4 -right-2 sm:-top-6 sm:-right-3"></div>
+                    <div class="h-5 w-5 sm:h-7 sm:w-7 bg-black absolute rounded-full -bottom-2 -left-2 sm:-bottom-3 sm:-left-3"></div>
+                    <div class="h-5 w-5 sm:h-7 sm:w-7 bg-black absolute rounded-full -bottom-2 -right-2 sm:-bottom-3 sm:-right-3"></div>
+                    <div class="flex flex-col xs:flex-row xs:justify-between gap-1 xs:gap-0">
                         <h3 class="">American Combo Menu</h3>
                         <p class="text-[#c49c5e]">2000 F</p>
                     </div>
                     <div class="w-full bg-black h-[1px]"></div>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
 
-                    <div class="flex justify-between">
+                    <div class="flex flex-col xs:flex-row xs:justify-between gap-1 xs:gap-0">
                         <h3 class="">Strawberry Jam French Toast</h3>
                         <p class="text-[#c49c5e]">2000 F</p>
                     </div>
                     <div class="w-full bg-black h-[1px]"></div>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
 
-                    <div class="flex justify-between">
+                    <div class="flex flex-col xs:flex-row xs:justify-between gap-1 xs:gap-0">
                         <h3 class="">Optic Big Breakfast Combo Menu</h3>
                         <p class="text-[#c49c5e]">2000 F</p>
                     </div>

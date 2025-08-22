@@ -22,7 +22,7 @@ const openingHours = [
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
         <!-- Logo & Description -->
         <div class="lg:col-span-1">
-          <img src="/logo.png" alt="La mie dorée" class="h-12 mb-4">
+          <img src="/logo.png" alt="La mie dorée" class="h-15 mb-4">
           <p class="text-gray-300 mb-4">
             Depuis 2010, nous servons des cafés d'exception et des pâtisseries faites maison dans une ambiance chaleureuse.
           </p>
