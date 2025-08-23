@@ -1,25 +1,22 @@
 <script setup>
 import { ShoppingBag, X, Plus, Minus } from 'lucide-vue-next';
-import { computed } from 'vue';
+import { usePlatsStore } from '@/stores/plats'
+
+const platsStore = usePlatsStore()
 
 const props = defineProps({
-  isOpen: Boolean,
-  cartItems: Array
+  isOpen: Boolean
 });
 
-const emit = defineEmits(['update-quantity', 'remove-item', 'close']);
+const emit = defineEmits(['close']);
 
-const subtotal = computed(() => {
-  return props.cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-});
+const updateQuantity = (id, action) => {
+  platsStore.modifierQuantite(id, action)
+};
 
-const deliveryFee = computed(() => {
-  return subtotal.value > 15 ? 0 : 2.5;
-});
-
-const total = computed(() => {
-  return subtotal.value + deliveryFee.value;
-});
+const removeItem = (id) => {
+  platsStore.retirerDuPanier(id)
+};
 </script>
 
 <template>
@@ -46,31 +43,31 @@ const total = computed(() => {
         </div>
 
         <!-- Liste des articles -->
-        <div v-if="cartItems.length > 0">
-          <div class="max-h-96 overflow-y-auto py-2">
+        <div v-if="platsStore.panier.length > 0">
+          <div class="max-h-64 overflow-y-auto py-2">
             <div 
-              v-for="item in cartItems"
+              v-for="item in platsStore.panier"
               :key="item.id"
               class="flex items-center py-3 border-b"
             >
               <img 
                 :src="item.image" 
-                :alt="item.name"
+                :alt="item.nom"
                 class="w-16 h-16 object-cover rounded-md"
               >
               <div class="ml-3 flex-1">
-                <h4 class="font-medium text-gray-800">{{ item.name }}</h4>
-                <p class="text-[#592d0c] font-semibold">{{ (item.price * item.quantity).toFixed(2) }} €</p>
+                <h4 class="font-medium text-gray-800">{{ item.nom }}</h4>
+                <p class="text-[#592d0c] font-semibold">{{ (item.prix * item.quantite).toFixed(2) }} €</p>
                 <div class="flex items-center mt-1">
                   <button 
-                    @click="$emit('update-quantity', item.id, 'decrease')"
+                    @click="updateQuantity(item.id, 'decrease')"
                     class="text-gray-500 hover:text-[#592d0c] p-1"
                   >
                     <Minus class="h-3 w-3" />
                   </button>
-                  <span class="mx-2 text-gray-300 text-sm w-5 text-center">{{ item.quantity }}</span>
+                  <span class="mx-2 text-gray-300 text-sm w-5 text-center">{{ item.quantite }}</span>
                   <button 
-                    @click="$emit('update-quantity', item.id, 'increase')"
+                    @click="updateQuantity(item.id, 'increase')"
                     class="text-gray-500 hover:text-[#592d0c] p-1"
                   >
                     <Plus class="h-3 w-3" />
@@ -78,7 +75,7 @@ const total = computed(() => {
                 </div>
               </div>
               <button 
-                @click="$emit('remove-item', item.id)"
+                @click="removeItem(item.id)"
                 class="ml-2 text-gray-400 hover:text-red-500"
               >
                 <X class="h-4 w-4" />
@@ -90,15 +87,15 @@ const total = computed(() => {
           <div class="border-t pt-3 mt-2">
             <div class="flex justify-between py-1 text-sm">
               <span>Sous-total</span>
-              <span class="font-medium">{{ subtotal.toFixed(2) }} €</span>
+              <span class="font-medium">{{ platsStore.totalPanier.toFixed(2) }} €</span>
             </div>
             <div class="flex justify-between py-1 text-sm">
               <span>Livraison</span>
-              <span class="font-medium">{{ deliveryFee.toFixed(2) }} €</span>
+              <span class="font-medium">{{ platsStore.fraisLivraison.toFixed(2) }} €</span>
             </div>
             <div class="flex justify-between py-2 font-bold text-[#592d0c]">
               <span>Total</span>
-              <span>{{ total.toFixed(2) }} €</span>
+              <span>{{ platsStore.totalAvecFrais.toFixed(2) }} €</span>
             </div>
 
             <RouterLink 
@@ -120,7 +117,7 @@ const total = computed(() => {
             @click="$emit('close')"
             class="mt-4 text-[#592d0c] hover:text-[#7a3f18] font-medium inline-block"
           >
-            Voir notre menu →
+            Voir notre menu
           </RouterLink>
         </div>
       </div>

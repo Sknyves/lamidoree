@@ -19,7 +19,7 @@
                 <h2 class="text-[#FAB421] font-medium text-lg md:text-xl">1 café offert pour 1 viennoiserie achetée</h2>
                 <p class="text-gray-600 text-sm md:text-base">Profitez de notre offre spéciale petit déjeuner. Chaque viennoiserie achetée vous donne droit à un café gratuit. Parfait pour commencer votre journée en beauté.</p>
                 <button class="mt-4 text-white bg-[#592d0c] rounded-lg px-6 py-2 hover:bg-[#7a3f18] transition transform hover:scale-105">
-                    Voir l'offre →
+                    Voir l'offre
                 </button>
             </div>
         </div>
@@ -36,7 +36,7 @@
                     <h2 class="text-[#FAB421] font-medium text-lg md:text-xl">1 cookie offert pour 2 boissons achetées</h2>
                     <p class="text-gray-600 text-sm md:text-base">Notre pause gourmande de l'après-midi. Pour deux boissons commandées, recevez un délicieux cookie maison gratuitement.</p>
                     <button class="mt-4 text-white bg-[#592d0c] rounded-lg px-6 py-2 hover:bg-[#7a3f18] transition transform hover:scale-105">
-                        Voir l'offre →
+                        Voir l'offre
                     </button>
                 </div>
             </div>

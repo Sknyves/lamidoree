@@ -2,29 +2,20 @@
 import { ShoppingBag, Menu, X } from 'lucide-vue-next';
 import { ref } from 'vue';
 import CartDropdown from './CartDropdown.vue';
+import { usePlatsStore } from '@/stores/plats';
 
 const isMenuOpen = ref(false);
 const isCartOpen = ref(false);
 
-// Données du panier (à remplacer par un store Pinia si nécessaire)
-const cartItems = ref([
-  { id: 1, name: 'Croissant au beurre', price: 2.5, quantity: 2, image: '/pastry-2.jpg' },
-  { id: 2, name: 'Cappuccino', price: 3.8, quantity: 1, image: '/drink-3.jpg' }
-]);
+// Utilisation du store Pinia
+const platsStore = usePlatsStore();
 
 const updateQuantity = (id, action) => {
-  const item = cartItems.value.find(item => item.id === id);
-  if (item) {
-    if (action === 'increase') {
-      item.quantity++;
-    } else if (action === 'decrease' && item.quantity > 1) {
-      item.quantity--;
-    }
-  }
+  platsStore.modifierQuantite(id, action);
 };
 
 const removeItem = (id) => {
-  cartItems.value = cartItems.value.filter(item => item.id !== id);
+  platsStore.retirerDuPanier(id);
 };
 </script>
 
@@ -87,16 +78,16 @@ const removeItem = (id) => {
             >
               <ShoppingBag class="h-6 w-6" />
               <span 
-                v-if="cartItems.length > 0"
+                v-if="platsStore.nombreArticlesPanier > 0"
                 class="absolute -top-1 -right-1 bg-[#FAB421] text-xs text-black rounded-full h-5 w-5 flex items-center justify-center"
               >
-                {{ cartItems.reduce((acc, item) => acc + item.quantity, 0) }}
+                {{ platsStore.nombreArticlesPanier }}
               </span>
             </button>
 
             <CartDropdown 
               :is-open="isCartOpen" 
-              :cart-items="cartItems"
+              :cart-items="platsStore.panier"
               @update-quantity="updateQuantity"
               @remove-item="removeItem"
               @close="isCartOpen = false"

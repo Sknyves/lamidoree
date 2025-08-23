@@ -1,6 +1,7 @@
 import Gallery from "@/components/Gallery.vue";
 import About from "@/views/About.vue";
 import Accueil from "@/views/accueil.vue";
+import Confirmation from "@/views/Confirmation.vue";
 import Contact from "@/views/Contact.vue";
 import Menu from "@/views/Menu.vue";
 import Order from "@/views/Order.vue";
@@ -48,6 +49,11 @@ const routes = [
         path: '/order',
         name: 'order',
         component: Order
+    },
+    {
+        path: '/confirmation',
+        name: 'confirmation',
+        component: Confirmation
     }
 ]
 

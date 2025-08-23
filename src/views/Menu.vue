@@ -1,131 +1,10 @@
 <script setup>
-import { Star, Coffee, Croissant, Clock, Sandwich, Salad } from 'lucide-vue-next';
-import { ref } from 'vue';
+import { Star, Coffee, Croissant, Sandwich } from 'lucide-vue-next';
+import { ref, onMounted } from 'vue';
+import { usePlatsStore } from '@/stores/plats';
 
+const platsStore = usePlatsStore();
 const activeCategory = ref('breakfast');
-
-const menuItems = {
-  breakfast: [
-    {
-      name: "Petit Déjeuner Classique",
-      description: "Café, jus d'orange frais, viennoiserie au choix",
-      price: "8.50",
-      popular: true,
-      image: "/breakfast-1.jpg"
-    },
-    {
-      name: "Avocado Toast",
-      description: "Pain complet, avocat, œuf poché, graines",
-      price: "9.80",
-      popular: false,
-      image: "/breakfast-2.jpg"
-    },
-    {
-      name: "Pancakes Maison",
-      description: "Servis avec sirop d'érable et fruits de saison",
-      price: "7.90",
-      popular: true,
-      image: "/breakfast-3.jpg"
-    },
-    {
-      name: "Granola Bio",
-      description: "Yaourt grec, fruits frais, miel",
-      price: "6.50",
-      popular: false,
-      image: "/breakfast-4.jpg"
-    }
-  ],
-  drinks: [
-    {
-      name: "Expresso",
-      description: "Notre mélange signature",
-      price: "3.20",
-      popular: true,
-      image: "/drink-1.jpg"
-    },
-    {
-      name: "Cappuccino",
-      description: "Avec mousse de lait onctueuse",
-      price: "4.50",
-      popular: true,
-      image: "/drink-2.jpg"
-    },
-    {
-      name: "Thé Signature",
-      description: "Sélection de thés premium",
-      price: "3.80",
-      popular: false,
-      image: "/drink-3.jpg"
-    },
-    {
-      name: "Smoothie Vert",
-      description: "Épinard, pomme, gingembre, citron",
-      price: "5.90",
-      popular: false,
-      image: "/drink-4.jpg"
-    }
-  ],
-  lunch: [
-    {
-      name: "Salade César",
-      description: "Poulet grillé, parmesan, croûtons, sauce maison",
-      price: "12.50",
-      popular: true,
-      image: "/lunch-1.jpg"
-    },
-    {
-      name: "Sandwich Club",
-      description: "Poulet, bacon, avocat, pain aux céréales",
-      price: "10.90",
-      popular: false,
-      image: "/lunch-2.jpg"
-    },
-    {
-      name: "Quiche du Jour",
-      description: "Accompagnée de salade verte",
-      price: "11.20",
-      popular: true,
-      image: "/lunch-3.jpg"
-    },
-    {
-      name: "Bowl Buddha",
-      description: "Quinoa, légumes rôtis, avocat, sauce tahini",
-      price: "13.50",
-      popular: false,
-      image: "/lunch-4.jpg"
-    }
-  ],
-  pastries: [
-    {
-      name: "Croissant Pur Beurre",
-      description: "Fait maison quotidiennement",
-      price: "2.80",
-      popular: true,
-      image: "/pastry-1.jpg"
-    },
-    {
-      name: "Pain au Chocolat",
-      description: "Chocolat premium belge",
-      price: "3.20",
-      popular: true,
-      image: "/pastry-2.jpg"
-    },
-    {
-      name: "Tarte Citron Meringuée",
-      description: "Équilibrée entre acidité et douceur",
-      price: "4.50",
-      popular: false,
-      image: "/pastry-3.jpg"
-    },
-    {
-      name: "Cookie Maison",
-      description: "Pépites de chocolat et noix de pécan",
-      price: "2.50",
-      popular: false,
-      image: "/pastry-4.jpg"
-    }
-  ]
-};
 
 const categories = [
   { id: 'breakfast', name: 'Petit Déjeuner', icon: Coffee },
@@ -133,6 +12,16 @@ const categories = [
   { id: 'lunch', name: 'Déjeuner', icon: Sandwich },
   { id: 'pastries', name: 'Pâtisseries', icon: Croissant }
 ];
+
+const ajouterAuPanier = (item) => {
+  platsStore.ajouterAuPanier(item);
+};
+
+onMounted(() => {
+  if (Object.keys(platsStore.menuItems).length === 0) {
+    platsStore.chargerDonnees();
+  }
+});
 </script>
 
 <template>
@@ -178,7 +67,7 @@ const categories = [
     <section class="py-12 px-4 md:px-8 max-w-6xl mx-auto">
       <div class="grid md:grid-cols-2 gap-6">
         <div 
-          v-for="(item, index) in menuItems[activeCategory]" 
+          v-for="(item, index) in platsStore.menuItems[activeCategory]" 
           :key="index"
           class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
         >
@@ -206,6 +95,7 @@ const categories = [
             <p class="text-gray-600 mb-4">{{ item.description }}</p>
             
             <button 
+              @click="ajouterAuPanier(item)"
               class="w-full bg-[#592d0c] hover:bg-[#7a3f18] text-white py-2 rounded-lg transition-colors flex items-center justify-center"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -284,7 +174,6 @@ const categories = [
   scrollbar-width: none;
 }
 
-/* Animation pour les éléments du menu */
 .menu-item {
   transition: all 0.3s ease;
 }

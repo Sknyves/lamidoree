@@ -19,26 +19,7 @@ const openingHours = [
 <template>
   <footer class="bg-[#1f0f03] text-white pt-12 pb-6 mt-8">
     <div class="container mx-auto px-4 md:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-        <!-- Logo & Description -->
-        <div class="lg:col-span-1">
-          <img src="/logo.png" alt="La mie dorée" class="h-15 mb-4">
-          <p class="text-gray-300 mb-4">
-            Depuis 2010, nous servons des cafés d'exception et des pâtisseries faites maison dans une ambiance chaleureuse.
-          </p>
-          <div class="flex space-x-4">
-            <a href="#" class="text-gray-300 hover:text-[#FAB421] transition-colors">
-              <Facebook class="w-5 h-5" />
-            </a>
-            <a href="#" class="text-gray-300 hover:text-[#FAB421] transition-colors">
-              <Instagram class="w-5 h-5" />
-            </a>
-            <a href="#" class="text-gray-300 hover:text-[#FAB421] transition-colors">
-              <Twitter class="w-5 h-5" />
-            </a>
-          </div>
-        </div>
-
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 items-center">
         <!-- Liens rapides -->
         <div>
           <h3 class="text-lg font-bold mb-4 text-[#FAB421]">Liens rapides</h3>
@@ -54,6 +35,26 @@ const openingHours = [
             </li>
           </ul>
         </div>
+
+        <!-- Logo & Description -->
+        <div class="lg:col-span-1 text-center">
+          <img src="/logo.png" alt="La mie dorée" class="h-15 mb-4 mx-auto">
+          <p class="text-gray-300 mb-4">
+            Patisserie artisanale où chaque création est faites maison, avec passion et des ingrédients de qualité. Viennoiserie, gâteaux et douceurs gourmandes ... pour des moments simples et savoureux, chaque jour.
+          </p>
+          <div class="flex space-x-4 justify-center">
+            <a href="#" class="text-gray-300 hover:text-[#FAB421] transition-colors">
+              <Facebook class="w-5 h-5" />
+            </a>
+            <a href="#" class="text-gray-300 hover:text-[#FAB421] transition-colors">
+              <Instagram class="w-5 h-5" />
+            </a>
+            <a href="#" class="text-gray-300 hover:text-[#FAB421] transition-colors">
+              <Twitter class="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+
 
         <!-- Horaires -->
         <div>
@@ -75,15 +76,15 @@ const openingHours = [
           <ul class="space-y-3">
             <li class="flex items-start">
               <MapPin class="text-[#FAB421] w-4 h-4 mt-1 mr-2 flex-shrink-0" />
-              <span class="text-gray-300">123 Rue du Café, 75000 Cotonou</span>
+              <span class="text-gray-300">Bénin, Abomey Calavi, dans la von en face de la mosquée d'IIta</span>
             </li>
             <li class="flex items-start">
               <Phone class="text-[#FAB421] w-4 h-4 mt-1 mr-2 flex-shrink-0" />
-              <span class="text-gray-300">01 23 45 67 89</span>
+              <a href="tel:+2290161893483" class="text-gray-300">(+229) 01 61 89 34 83</a>
             </li>
             <li class="flex items-start">
               <Mail class="text-[#FAB421] w-4 h-4 mt-1 mr-2 flex-shrink-0" />
-              <span class="text-gray-300">contact@lamiedoree.com</span>
+              <a href="mailto:lamiedoree@gmail.com" class="text-gray-300">lamiedoree@gmail.com</a>
             </li>
           </ul>
         </div>

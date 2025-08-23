@@ -1,4 +1,13 @@
-<script setup></script>
+<script setup>
+import { onMounted } from 'vue'
+import { usePlatsStore } from '@/stores/plats'
+
+const platsStore = usePlatsStore()
+
+onMounted(() => {
+  platsStore.chargerMenuDuJour()
+})
+</script>
 
 <template>
     <div class="bg-[#1f0f03] space-y-8 py-10 sm:py-16 md:py-20">
@@ -12,26 +21,15 @@
                         <div class="h-7 w-7 sm:h-10 sm:w-10 bg-black absolute rounded-full -top-6 -right-3 sm:-top-8 sm:-right-5"></div>
                         <div class="h-5 w-5 sm:h-7 sm:w-7 bg-black absolute rounded-full -bottom-2 -left-2 sm:-bottom-3 sm:-left-3"></div>
                         <div class="h-5 w-5 sm:h-7 sm:w-7 bg-black absolute rounded-full -bottom-2 -right-2 sm:-bottom-3 sm:-right-3"></div>
-                        <div class="flex flex-col xs:flex-row xs:justify-between gap-1 xs:gap-0">
-                            <h3 class="">American Combo Menu</h3>
-                            <p class="text-[#c49c5e]">2000 F</p>
+                        
+                        <div v-for="(plat, index) in platsStore.menuDuJour" :key="index">
+                          <div class="flex flex-col xs:flex-row xs:justify-between gap-1 xs:gap-0">
+                              <h3 class="">{{ plat.nom }}</h3>
+                              <p class="text-[#c49c5e]">{{ plat.prix.toLocaleString() }} F</p>
+                          </div>
+                          <div class="w-full bg-black h-[1px]"></div>
+                          <p>{{ plat.description }}</p>
                         </div>
-                        <div class="w-full bg-black h-[1px]"></div>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-
-                        <div class="flex flex-col xs:flex-row xs:justify-between gap-1 xs:gap-0">
-                            <h3 class="">Strawberry Jam French Toast</h3>
-                            <p class="text-[#c49c5e]">2000 F</p>
-                        </div>
-                        <div class="w-full bg-black h-[1px]"></div>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-
-                        <div class="flex flex-col xs:flex-row xs:justify-between gap-1 xs:gap-0">
-                            <h3 class="">Optic Big Breakfast Combo Menu</h3>
-                            <p class="text-[#c49c5e]">2000 F</p>
-                        </div>
-                        <div class="w-full bg-black h-[1px]"></div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div>
             </div>
@@ -42,26 +40,15 @@
                     <div class="h-5 w-5 sm:h-7 sm:w-7 bg-black absolute rounded-full -top-4 -right-2 sm:-top-6 sm:-right-3"></div>
                     <div class="h-5 w-5 sm:h-7 sm:w-7 bg-black absolute rounded-full -bottom-2 -left-2 sm:-bottom-3 sm:-left-3"></div>
                     <div class="h-5 w-5 sm:h-7 sm:w-7 bg-black absolute rounded-full -bottom-2 -right-2 sm:-bottom-3 sm:-right-3"></div>
-                    <div class="flex flex-col xs:flex-row xs:justify-between gap-1 xs:gap-0">
-                        <h3 class="">American Combo Menu</h3>
-                        <p class="text-[#c49c5e]">2000 F</p>
+                    
+                    <div v-for="(plat, index) in platsStore.menuDuJour" :key="index">
+                      <div class="flex flex-col xs:flex-row xs:justify-between gap-1 xs:gap-0">
+                          <h3 class="">{{ plat.nom }}</h3>
+                          <p class="text-[#c49c5e]">{{ plat.prix.toLocaleString() }} F</p>
+                      </div>
+                      <div class="w-full bg-black h-[1px]"></div>
+                      <p>{{ plat.description }}</p>
                     </div>
-                    <div class="w-full bg-black h-[1px]"></div>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-
-                    <div class="flex flex-col xs:flex-row xs:justify-between gap-1 xs:gap-0">
-                        <h3 class="">Strawberry Jam French Toast</h3>
-                        <p class="text-[#c49c5e]">2000 F</p>
-                    </div>
-                    <div class="w-full bg-black h-[1px]"></div>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-
-                    <div class="flex flex-col xs:flex-row xs:justify-between gap-1 xs:gap-0">
-                        <h3 class="">Optic Big Breakfast Combo Menu</h3>
-                        <p class="text-[#c49c5e]">2000 F</p>
-                    </div>
-                    <div class="w-full bg-black h-[1px]"></div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>            
             </div>
         </div>
